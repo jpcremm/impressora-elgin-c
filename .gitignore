@@ -1,0 +1,19 @@
+# Executaveis e arquivos de compilacao
+*.exe
+*.o
+*.obj
+bin/
+obj/
+
+# Code::Blocks (arquivos pessoais da IDE)
+*.layout
+*.depend
+
+# Biblioteca da Elgin (arquivo grande de terceiros; copie manualmente para a raiz)
+*.dll
+Bibliotecas*/
+*.zip
+
+# Material do professor (enunciado e chave de exemplo, que ja esta no main.c)
+Trabalho_C_Impressora.pdf
+ASS_QRCODE*.txt
