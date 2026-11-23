@@ -258,15 +258,16 @@ void exibirMenu(void) {
 
     printf("1  - Configurar Conexao\n");
     printf("2  - Abrir Conexao\n");
-    printf("3  - Impressao Texto\n");
-    printf("4  - Impressao QRCode\n");
-    printf("5  - Impressao Cod Barras\n");
-    printf("6  - Impressao XML SAT\n");
-    printf("7  - Impressao XML Canc SAT\n");
-    printf("8  - Abrir Gaveta Elgin\n");
-    printf("9  - Abrir Gaveta\n");
-    printf("10 - Sinal Sonoro\n");
-    printf("0  - Fechar Conexao e Sair\n");
+    printf("3  - Fechar Conexao\n");
+    printf("4  - Impressao Texto\n");
+    printf("5  - Impressao QRCode\n");
+    printf("6  - Impressao Cod Barras\n");
+    printf("7  - Impressao XML SAT\n");
+    printf("8  - Impressao XML Canc SAT\n");
+    printf("9  - Abrir Gaveta Elgin\n");
+    printf("10 - Abrir Gaveta\n");
+    printf("11 - Sinal Sonoro\n");
+    printf("0  - Sair\n");
     printf("--------------------------------------\n");
 }
 
