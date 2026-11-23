@@ -251,6 +251,21 @@ void imprimirQRCode(void) {
     }
 }
 
+/* Pede usuario e senha, com 3 tentativas. Devolve 1 se acertar e 0 se errar as 3. */
+int fazerLogin(void) {
+    char usuario[50], senha[50];
+    for (int tentativa = 1; tentativa <= 3; tentativa++) {
+        capturarEntrada("Usuario: ", usuario, sizeof(usuario));
+        capturarEntrada("Senha: ", senha, sizeof(senha));
+        if (strcmp(usuario, "admin") == 0 && strcmp(senha, "1234") == 0) {
+            printf("Login realizado com sucesso.\n");
+            return 1;
+        }
+        printf("Usuario ou senha incorretos. Tentativas restantes: %d\n", 3 - tentativa);
+    }
+    return 0;
+}
+
 void exibirMenu(void) {
     printf("\n*************************************************\n");
     printf("**************** MENU IMPRESSORA ****************\n");
