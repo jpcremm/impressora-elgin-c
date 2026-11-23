@@ -66,7 +66,7 @@ gcc main.c -o impressora.exe
 1. Abra o `main.c` (ou crie um projeto de *Console application* em C com ele).
 2. Clique em **Build and Run** (F9).
 
-### ▶ 4. Executar
+###  4. Executar
 1. Conecte a impressora (USB, por exemplo) e ligue-a.
 2. Execute `impressora.exe` a partir da pasta que contém a DLL.
 3. Use o menu abaixo.
