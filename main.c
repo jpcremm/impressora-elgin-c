@@ -228,27 +228,49 @@ void fecharConexao(void) {
 void imprimirTexto(void) {
     if (!verificaConexao()) return;
 
-    /* posicao: 0 esquerda, 1 centro, 2 direita | estilo: 0 normal, 4 negrito | tamanho: 0 normal */
-    int retorno = ImpressaoTexto("Teste de impressao", 1, 4, 0);
-    mostraResultado("Impressao de texto", retorno);
-
-    if (retorno == 0) {
-        AvancaPapel(2);
-        Corte(2);
+    char texto[256];
+    capturarEntrada("Digite o texto que sera impresso: ", texto, sizeof(texto) - 1);  /* -1 reserva espaco para o "\n" */
+    if (texto[0] == '\0') {
+        printf("Texto vazio. Nada foi impresso.\n");
+        return;
     }
+    int copias = lerInteiro("Quantas copias? ");
+    if (copias <= 0) {
+        printf("Quantidade invalida.\n");
+        return;
+    }
+
+    /* "\n" no final para a impressora pular de linha depois do texto */
+    strcat(texto, "\n");
+
+    /* posicao: 1 centro | estilo: 4 | tamanho: 0 normal */
+    for (int i = 1; i <= copias; i++) {
+        int retorno = ImpressaoTexto(texto, 1, 4, 0);
+        /* ATENCAO: ImpressaoTexto devolve a quantidade de dados enviados; so e erro se for negativo */
+        if (retorno >= 0) {
+            printf("Copia %d impressa!\n", i);
+        } else {
+            printf("Erro ao imprimir texto. Codigo: %d\n", retorno);
+            break;
+        }
+    }
+    Corte(5);
 }
 
 void imprimirQRCode(void) {
     if (!verificaConexao()) return;
 
     /* tamanho do modulo: 6 | nivel de correcao: 4 (alto) */
-    int retorno = ImpressaoQRCode("Teste de impressao", 6, 4);
-    mostraResultado("Impressao de QR Code", retorno);
-
-    if (retorno == 0) {
-        AvancaPapel(5);
-        Corte(2);
+    char conteudo[512];
+    capturarEntrada("Digite o conteudo do QR Code: ", conteudo, sizeof(conteudo));
+    if (conteudo[0] == '\0') {
+        printf("Conteudo vazio. Nada foi impresso.\n");
+        return;
     }
+
+    int retorno = ImpressaoQRCode(conteudo, 6, 4);
+    mostraResultado("Impressao de QR Code", retorno);
+    Corte(5);
 }
 
 /* Pede usuario e senha, com 3 tentativas. Devolve 1 se acertar e 0 se errar as 3. */
