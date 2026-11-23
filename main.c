@@ -278,22 +278,29 @@ int main(void) {
         return 1;
     }
 
+    if (!fazerLogin()) {
+        printf("Acesso negado.\n");
+        FreeLibrary(dll);
+        return 1;
+    }
+
     int opcao = -1;
     while (opcao != 0) {
         exibirMenu();
         opcao = lerInteiro("\nDigite a opcao desejada: ");
 
         switch (opcao) {
-            case 1:  configurarConexao();         break;
-            case 2:  abrirConexao();              break;
-            case 3:  imprimirTexto();             break;
-            case 4:  imprimirQRCode();            break;
-            case 5:  imprimirCodigoBarras();      break;
-            case 6:  imprimirXMLSAT();            break;
-            case 7:  imprimirXMLCancelamentoSAT();break;
-            case 8:  abrirGavetaElgin();          break;
-            case 9:  abrirGaveta();               break;
-            case 10: emitirSinalSonoro();         break;
+            case 1:  configurarConexao();          break;
+            case 2:  abrirConexao();               break;
+            case 3:  fecharConexao();              break;
+            case 4:  imprimirTexto();              break;
+            case 5:  imprimirQRCode();             break;
+            case 6:  imprimirCodigoBarras();       break;
+            case 7:  imprimirXMLSAT();             break;
+            case 8:  imprimirXMLCancelamentoSAT(); break;
+            case 9:  abrirGavetaElgin();           break;
+            case 10: abrirGaveta();                break;
+            case 11: emitirSinalSonoro();          break;
             case 0:
                 fecharConexao();
                 printf("Encerrando o programa.\n");
