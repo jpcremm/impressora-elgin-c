@@ -1,8 +1,8 @@
-# 🖨️ Integração em C com Impressora Elgin i8 / i9
+#  Integração em C com Impressora Elgin i8 / i9
 ### Controle de Impressora Elgin via DLL `E1_Impressora01`
 ---
 
-## 📘 Sobre o Projeto
+##  Sobre o Projeto
 
 Este projeto foi desenvolvido por alunos com o objetivo de criar uma aplicação em **C** capaz de se comunicar com as impressoras térmicas **Elgin i8 e i9**, usando a biblioteca oficial **E1_Impressora01.dll** da Elgin.
 
@@ -12,7 +12,7 @@ O trabalho faz parte da disciplina de **Construção de Algoritmos e Programaç�
 
 ---
 
-## 🧰 Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 - **Linguagem C**
 - **Windows API** (`windows.h`) para carregar a DLL
@@ -21,7 +21,7 @@ O trabalho faz parte da disciplina de **Construção de Algoritmos e Programaç�
 
 ---
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```
 /
@@ -32,20 +32,20 @@ O trabalho faz parte da disciplina de **Construção de Algoritmos e Programaç�
 └── README.md               → Este arquivo
 ```
 
-> ⚠️ A DLL e os arquivos XML precisam ficar na **mesma pasta de onde o programa é executado**.
+>  A DLL e os arquivos XML precisam ficar na **mesma pasta de onde o programa é executado**.
 > A DLL é um arquivo grande (~20 MB) distribuído pela Elgin e por isso está no `.gitignore`: copie-a manualmente para a raiz do projeto (veja o passo 2 da instalação).
 
 ---
 
-## ⚙️ Instalação e Execução
+##  Instalação e Execução
 
-### 🔽 1. Baixar o Projeto do GitHub
+###  1. Baixar o Projeto do GitHub
 1. Acesse o repositório.
 2. Clique no botão **Code**.
 3. Selecione **Download ZIP**.
 4. Aguarde o download e extraia o arquivo (botão direito → **Extrair aqui** / **Extract All**).
 
-### 📦 2. Preparar a DLL
+###  2. Preparar a DLL
 A DLL precisa ter a **mesma arquitetura do compilador**:
 
 | Compilador | DLL a usar |
@@ -55,7 +55,7 @@ A DLL precisa ter a **mesma arquitetura do compilador**:
 
 Copie `E1_Impressora01.dll`, `XMLSAT.xml` e `CANC_SAT.xml` para a raiz do projeto.
 
-### 🔨 3. Compilar
+###  3. Compilar
 
 **Pelo terminal (GCC):**
 ```bash
@@ -66,14 +66,14 @@ gcc main.c -o impressora.exe
 1. Abra o `main.c` (ou crie um projeto de *Console application* em C com ele).
 2. Clique em **Build and Run** (F9).
 
-### ▶️ 4. Executar
+### ▶ 4. Executar
 1. Conecte a impressora (USB, por exemplo) e ligue-a.
 2. Execute `impressora.exe` a partir da pasta que contém a DLL.
 3. Use o menu abaixo.
 
 ---
 
-## 🖥️ Menu do Programa
+##  Menu do Programa
 
 | Opção | Função |
 |---|---|
@@ -100,7 +100,7 @@ Valores padrão: tipo `1` (USB), modelo `i9`, porta `USB`, parâmetro `0`.
 
 ---
 
-## 🧪 Testes
+##  Testes
 
 - Login com senha correta, senha errada (3 tentativas) e bloqueio após a terceira falha
 - Teste de conexão com a impressora (abrir e fechar)
@@ -112,7 +112,7 @@ Valores padrão: tipo `1` (USB), modelo `i9`, porta `USB`, parâmetro `0`.
 
 ---
 
-## 🩺 Problemas Comuns
+##  Problemas Comuns
 
 | Problema | Causa provável |
 |---|---|
@@ -123,7 +123,7 @@ Valores padrão: tipo `1` (USB), modelo `i9`, porta `USB`, parâmetro `0`.
 
 ---
 
-## 📚 Documentação Adicional
+##  Documentação Adicional
 
 - Manual da Impressora **Elgin i9**
 - Documentação do **SDK / DLL E1_Impressora01** da Elgin
@@ -131,8 +131,7 @@ Valores padrão: tipo `1` (USB), modelo `i9`, porta `USB`, parâmetro `0`.
 
 ---
 
-## 👥 Autores  
-*(em ordem alfabética)*
+##  Autores  
 
 - Carlos Eduardo
 - José Pedro
